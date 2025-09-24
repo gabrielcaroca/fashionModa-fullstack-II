@@ -1,24 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dashboard Admin</title>
 
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
-        rel="stylesheet" 
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
-        crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
   <!-- Font Awesome (íconos) -->
-  <link rel="stylesheet" 
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <div class="container-fluid">
     <div class="row flex-nowrap">
-
       <!-- Sidebar -->
       <aside class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark text-white">
         <div class="d-flex flex-column align-items-sm-start px-3 pt-2 min-vh-100">
@@ -28,143 +24,384 @@
             </a>
           </header>
 
-          <!-- Navegación principal -->
           <nav aria-label="Menú principal" class="flex-grow-1">
             <ul class="nav nav-pills flex-column mb-sm-auto mb-0">
               <li class="nav-item">
-                <a href="#" class="nav-link text-white active">
-                  <i class="fa-solid fa-table-columns"></i>
-                  <span class="ms-2">Dashboard</span>
+                <a href="#" class="nav-link text-white active" data-target="dashboard">
+                  <i class="fa-solid fa-table-columns"></i><span class="ms-2">Dashboard</span>
                 </a>
               </li>
               <li><a href="#" class="nav-link text-white" data-target="orders"><i class="fa-solid fa-box"></i><span class="ms-2">Orders</span></a></li>
-              <li><a href="inventory.html" class="nav-link text-white"><i class="fa-solid fa-warehouse"></i><span class="ms-2">Inventory</span></a></li>
-              <li><a href="reports.html" class="nav-link text-white"><i class="fa-solid fa-chart-bar"></i><span class="ms-2">Reports</span></a></li>
-              <li><a href="employees.html" class="nav-link text-white"><i class="fa-solid fa-users"></i><span class="ms-2">Employees</span></a></li>
-              <li><a href="customers.html" class="nav-link text-white"><i class="fa-solid fa-user-group"></i><span class="ms-2">Customers</span></a></li>
+              <li><a href="#" class="nav-link text-white" data-target="inventory"><i class="fa-solid fa-warehouse"></i><span class="ms-2">Inventory</span></a></li>
+              <li><a href="#" class="nav-link text-white" data-target="reports"><i class="fa-solid fa-chart-bar"></i><span class="ms-2">Reports</span></a></li>
+              <li><a href="#" class="nav-link text-white" data-target="employees"><i class="fa-solid fa-users"></i><span class="ms-2">Employees</span></a></li>
+              <li><a href="#" class="nav-link text-white" data-target="customers"><i class="fa-solid fa-user-group"></i><span class="ms-2">Customers</span></a></li>
             </ul>
           </nav>
+        </div>
       </aside>
 
-      <!-- Order -->
-       <section id="orders" class="page d-none">
-  <header class="d-flex justify-content-between align-items-center mb-3">
-    <h2>Usuarios</h2>
-    <button class="btn btn-dark">Nuevo Usuario</button>
-  </header>
-
-  <!-- Filtros -->
-  <div class="mb-3">
-    <select class="form-select w-auto">
-      <option selected>All Sales Orders</option>
-      <option>Shipped</option>
-      <option>Pending</option>
-      <option>Cancelled</option>
-      <option>Processing</option>
-    </select>
-  </div>
-
-  <!-- Tabla -->
-  <div class="table-responsive">
-    <table class="table table-striped table-hover align-middle">
-      <thead class="table-light">
-        <tr>
-          <th>Date</th>
-          <th>Order #</th>
-          <th>Customer</th>
-          <th>Status</th>
-          <th class="text-end">Amount</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>2024-06-01</td>
-          <td>SO1001</td>
-          <td>Acme Corporation</td>
-          <td><span class="badge bg-success">Shipped</span></td>
-          <td class="text-end">$2500.00</td>
-        </tr>
-        <tr>
-          <td>2024-06-02</td>
-          <td>SO1002</td>
-          <td>Bravo Solutions</td>
-          <td><span class="badge bg-warning text-dark">Pending</span></td>
-          <td class="text-end">$3000.00</td>
-        </tr>
-        <tr>
-          <td>2024-06-03</td>
-          <td>SO1003</td>
-          <td>Charlie's Workshop</td>
-          <td><span class="badge bg-danger">Cancelled</span></td>
-          <td class="text-end">$500.00</td>
-        </tr>
-        <!-- 🔹 Puedes seguir agregando más filas según la maqueta -->
-      </tbody>
-    </table>
-  </div>
-
-  <!-- Paginación -->
-  <nav aria-label="Page navigation">
-    <ul class="pagination justify-content-center">
-      <li class="page-item disabled"><a class="page-link" href="#">«</a></li>
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item active"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item"><a class="page-link" href="#">»</a></li>
-    </ul>
-  </nav>
-</section>
-
-
-      <!-- Inventory -->
-
-      <!-- Reports -->
-
-      <!-- Employees -->
-
-      <!-- Customers -->
-
-
-
-      <!-- Contenido principal -->
+      <!-- Main -->
       <main class="col py-3">
-        <!-- Header -->
-        <header class="d-flex justify-content-between align-items-center mb-4">
-          <h1 class="h3">¡Hola Administrador!</h1>
-          <button class="btn btn-outline-secondary">
-            <i class="fa-solid fa-bell"></i>
-          </button>
-        </header>
+        <!-- Dashboard -->
+        <section id="dashboard" class="page">
+          <header class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="h3">¡Hola Administrador!</h1>
+            <button class="btn btn-outline-secondary"><i class="fa-solid fa-bell"></i></button>
+          </header>
 
-        <!-- Sección métricas -->
-        <section class="mb-4">
-          <h2 class="h5">Métricas principales</h2>
-          <div class="card p-3">
-            Aquí puedes mostrar estadísticas o gráficos.
+          <section class="mb-4">
+            <h2 class="h5">Métricas principales</h2>
+            <div class="card p-3">Aquí puedes mostrar estadísticas o gráficos.</div>
+          </section>
+
+          <section>
+            <h2 class="h5">Reportes recientes</h2>
+            <div class="card p-3">Aquí puedes mostrar reportes o tablas.</div>
+          </section>
+        </section>
+
+        <!-- Orders -->
+        <section id="orders" class="page d-none">
+          <header class="d-flex justify-content-between align-items-center mb-3">
+            <h2>Ordenes</h2>
+            <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#orderModal">Nueva Orden</button>
+          </header>
+
+          <!-- Modal NUEVA ORDEN -->
+          <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="orderModalLabel">Crear Nueva Orden</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="orderForm">
+                    <div class="mb-3">
+                      <label for="cliente" class="form-label">Cliente</label>
+                      <input type="text" id="cliente" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="estado" class="form-label">Estado</label>
+                      <select id="estado" class="form-select" required>
+                        <option value="">Seleccione...</option>
+                        <option value="enviado">Enviado</option>
+                        <option value="pendiente">Pendiente</option>
+                        <option value="cancelado">Cancelado</option>
+                        <option value="proceso">En Proceso</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label for="monto" class="form-label">Monto</label>
+                      <input type="number" id="monto" class="form-control" required min="1" step="0.01">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filtro -->
+          <div class="mb-3">
+            <select id="filtroEstado" class="form-select w-auto">
+              <option value="todos" selected>Todas las ventas</option>
+              <option value="enviado">Enviado</option>
+              <option value="pendiente">Pendiente</option>
+              <option value="cancelado">Cancelado</option>
+              <option value="proceso">En Proceso</option>
+            </select>
+          </div>
+
+          <!-- Tabla -->
+          <table id="ordersTable" class="table table-striped table-hover align-middle">
+            <thead class="table-light">
+              <tr>
+                <th>Fecha</th>
+                <th>Orden #</th>
+                <th>Cliente</th>
+                <th>Estado</th>
+                <th class="text-end">Monto</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2024-06-01</td>
+                <td>SO1001</td>
+                <td>Acme Corporation</td>
+                <td class="estado" data-estado="enviado"><span class="badge bg-success">Enviado</span></td>
+                <td class="text-end"><span class="monto-valor">$150.000</span>
+                  <button class="btn btn-warning btn-sm ms-2 btn-editar" data-order="SO1001">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>2024-06-02</td>
+                <td>SO1002</td>
+                <td>Bravo Solutions</td>
+                <td class="estado" data-estado="pendiente"><span class="badge bg-warning text-dark">Pendiente</span></td>
+                <td class="text-end"><span class="monto-valor">$80.500</span>
+                  <button class="btn btn-warning btn-sm ms-2 btn-editar" data-order="SO1002">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>2024-06-03</td>
+                <td>SO1003</td>
+                <td>Charlie's Workshop</td>
+                <td class="estado" data-estado="cancelado"><span class="badge bg-danger">Cancelado</span></td>
+                <td class="text-end"><span class="monto-valor">$45.000</span>
+                  <button class="btn btn-warning btn-sm ms-2 btn-editar" data-order="SO1003">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>2024-06-04</td>
+                <td>SO1004</td>
+                <td>Delta Enterprises</td>
+                <td class="estado" data-estado="proceso"><span class="badge bg-primary">En Proceso</span></td>
+                <td class="text-end"><span class="monto-valor">$120.900</span>
+                  <button class="btn btn-warning btn-sm ms-2 btn-editar" data-order="SO1004">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>2024-06-05</td>
+                <td>SO1005</td>
+                <td>EcoTech Ltd.</td>
+                <td class="estado" data-estado="enviado"><span class="badge bg-success">Enviado</span></td>
+                <td class="text-end"><span class="monto-valor">$200.000</span>
+                  <button class="btn btn-warning btn-sm ms-2 btn-editar" data-order="SO1005">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>2024-06-06</td>
+                <td>SO1006</td>
+                <td>FutureSoft</td>
+                <td class="estado" data-estado="pendiente"><span class="badge bg-warning text-dark">Pendiente</span></td>
+                <td class="text-end"><span class="monto-valor">$95.250</span>
+                  <button class="btn btn-warning btn-sm ms-2 btn-editar" data-order="SO1006">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>2024-06-07</td>
+                <td>SO1007</td>
+                <td>Global Traders</td>
+                <td class="estado" data-estado="cancelado"><span class="badge bg-danger">Cancelado</span></td>
+                <td class="text-end"><span class="monto-valor">$60.000</span>
+                  <button class="btn btn-warning btn-sm ms-2 btn-editar" data-order="SO1007">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>2024-06-08</td>
+                <td>SO1008</td>
+                <td>Horizon Group</td>
+                <td class="estado" data-estado="proceso"><span class="badge bg-primary">En Proceso</span></td>
+                <td class="text-end"><span class="monto-valor">$110.750</span>
+                  <button class="btn btn-warning btn-sm ms-2 btn-editar" data-order="SO1008">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>2024-06-09</td>
+                <td>SO1009</td>
+                <td>Infinity Tech</td>
+                <td class="estado" data-estado="enviado"><span class="badge bg-success">Enviado</span></td>
+                <td class="text-end"><span class="monto-valor">$175.000</span>
+                  <button class="btn btn-warning btn-sm ms-2 btn-editar" data-order="SO1009">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>2024-06-10</td>
+                <td>SO1010</td>
+                <td>Jupiter Solutions</td>
+                <td class="estado" data-estado="pendiente"><span class="badge bg-warning text-dark">Pendiente</span></td>
+                <td class="text-end"><span class="monto-valor">$89.990</span>
+                  <button class="btn btn-warning btn-sm ms-2 btn-editar" data-order="SO1010">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>2024-06-11</td>
+                <td>SO1011</td>
+                <td>Kappa Industries</td>
+                <td class="estado" data-estado="cancelado"><span class="badge bg-danger">Cancelado</span></td>
+                <td class="text-end"><span class="monto-valor">$70.000</span>
+                  <button class="btn btn-warning btn-sm ms-2 btn-editar" data-order="SO1011">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>2024-06-12</td>
+                <td>SO1012</td>
+                <td>Lumina Corp</td>
+                <td class="estado" data-estado="proceso"><span class="badge bg-primary">En Proceso</span></td>
+                <td class="text-end"><span class="monto-valor">$140.500</span>
+                  <button class="btn btn-warning btn-sm ms-2 btn-editar" data-order="SO1012">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>2024-06-13</td>
+                <td>SO1013</td>
+                <td>Matrix Systems</td>
+                <td class="estado" data-estado="enviado"><span class="badge bg-success">Enviado</span></td>
+                <td class="text-end"><span class="monto-valor">$210.000</span>
+                  <button class="btn btn-warning btn-sm ms-2 btn-editar" data-order="SO1013">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>2024-06-14</td>
+                <td>SO1014</td>
+                <td>Nova Enterprises</td>
+                <td class="estado" data-estado="pendiente"><span class="badge bg-warning text-dark">Pendiente</span></td>
+                <td class="text-end"><span class="monto-valor">$99.000</span>
+                  <button class="btn btn-warning btn-sm ms-2 btn-editar" data-order="SO1014">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>2024-06-15</td>
+                <td>SO1015</td>
+                <td>Omega Logistics</td>
+                <td class="estado" data-estado="cancelado"><span class="badge bg-danger">Cancelado</span></td>
+                <td class="text-end"><span class="monto-valor">$55.000</span>
+                  <button class="btn btn-warning btn-sm ms-2 btn-editar" data-order="SO1015">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>2024-06-16</td>
+                <td>SO1016</td>
+                <td>Phoenix Traders</td>
+                <td class="estado" data-estado="proceso"><span class="badge bg-primary">En Proceso</span></td>
+                <td class="text-end"><span class="monto-valor">$130.000</span>
+                  <button class="btn btn-warning btn-sm ms-2 btn-editar" data-order="SO1016">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>2024-06-17</td>
+                <td>SO1017</td>
+                <td>Quantum Labs</td>
+                <td class="estado" data-estado="enviado"><span class="badge bg-success">Enviado</span></td>
+                <td class="text-end"><span class="monto-valor">$160.000</span>
+                  <button class="btn btn-warning btn-sm ms-2 btn-editar" data-order="SO1017">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>2024-06-18</td>
+                <td>SO1018</td>
+                <td>Rapid Motors</td>
+                <td class="estado" data-estado="pendiente"><span class="badge bg-warning text-dark">Pendiente</span></td>
+                <td class="text-end"><span class="monto-valor">$85.700</span>
+                  <button class="btn btn-warning btn-sm ms-2 btn-editar" data-order="SO1018">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>2024-06-19</td>
+                <td>SO1019</td>
+                <td>Sunrise Co.</td>
+                <td class="estado" data-estado="cancelado"><span class="badge bg-danger">Cancelado</span></td>
+                <td class="text-end"><span class="monto-valor">$66.600</span>
+                  <button class="btn btn-warning btn-sm ms-2 btn-editar" data-order="SO1019">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>2024-06-20</td>
+                <td>SO1020</td>
+                <td>Titan Security</td>
+                <td class="estado" data-estado="proceso"><span class="badge bg-primary">En Proceso</span></td>
+                <td class="text-end"><span class="monto-valor">$140.000</span>
+                  <button class="btn btn-warning btn-sm ms-2 btn-editar" data-order="SO1020">Editar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Paginación -->
+          <nav><ul id="paginacion" class="pagination"></ul></nav>
+
+          <!-- Ir a página -->
+          <div class="d-flex justify-content-end">
+            <div class="input-group w-auto">
+              <span class="input-group-text">Ir a página</span>
+              <input type="number" id="inputPagina" class="form-control" min="1" style="max-width:100px;">
+              <button id="btnIr" class="btn btn-outline-primary">Ir</button>
+            </div>
+          </div>
+
+          <!-- Error debajo -->
+          <div class="text-center mt-2">
+            <div id="mensajeError" class="text-danger fw-bold"></div>
           </div>
         </section>
 
-        <!-- Sección reportes -->
-        <section>
-          <h2 class="h5">Reportes recientes</h2>
-          <div class="card p-3">
-            Aquí puedes mostrar reportes o tablas.
-          </div>
+        <!-- Inventario -->
+        <section id="inventory" class="page d-none">
+          <h2>Inventario</h2>
+          <p>Aquí va el contenido de Inventario.</p>
+        </section>
+
+        <!-- Reportes -->
+        <section id="reports" class="page d-none">
+          <h2>Reportes</h2>
+          <p>Aquí va el contenido de Reportes.</p>
+        </section>
+
+        <!-- Empleados -->
+        <section id="employees" class="page d-none">
+          <h2>Empleados</h2>
+          <p>Aquí va el contenido de Empleados.</p>
+        </section>
+
+        <!-- Clientes -->
+        <section id="customers" class="page d-none">
+          <h2>Clientes</h2>
+          <p>Aquí va el contenido de Clientes.</p>
         </section>
       </main>
     </div>
   </div>
 
+  <!-- MODAL EDITAR ORDEN -->
+  <div class="modal fade" id="editOrderModal" tabindex="-1" aria-labelledby="editOrderModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form class="modal-content" id="editOrderForm">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editOrderModalLabel">Editar Orden</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="editFecha" class="form-label">Fecha</label>
+            <input type="date" id="editFecha" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="editOrden" class="form-label">Orden #</label>
+            <input type="text" id="editOrden" class="form-control" readonly>
+          </div>
+          <div class="mb-3">
+            <label for="editCliente" class="form-label">Cliente</label>
+            <input type="text" id="editCliente" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="editEstado" class="form-label">Estado</label>
+            <select id="editEstado" class="form-select" required>
+              <option value="enviado">Enviado</option>
+              <option value="pendiente">Pendiente</option>
+              <option value="cancelado">Cancelado</option>
+              <option value="proceso">En Proceso</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="editMonto" class="form-label">Monto</label>
+            <input type="number" id="editMonto" class="form-control" min="0" step="0.01" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Guardar cambios</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
-          integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" 
-          crossorigin="anonymous"></script>
-  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
           crossorigin="anonymous"></script>
 
-  <!-- Tu JavaScript -->
+  <!-- Tu JS -->
   <script src="assets/js/main.js"></script>
 </body>
 </html>
