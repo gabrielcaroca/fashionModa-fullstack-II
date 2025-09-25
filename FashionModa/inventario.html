@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Usuario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Font Awesome (íconos) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-light">
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <!-- Sidebar -->
+            <aside class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark text-white">
+                <div class="d-flex flex-column align-items-sm-start px-3 pt-2 min-vh-100">
+                    <header class="mb-3">
+                        <a href="#" class="d-flex align-items-center text-white text-decoration-none">
+                            <span class="fs-5"><i class="fa-solid fa-circle-notch me-2"></i> Company</span>
+                        </a>
+                    </header>
+
+                    <nav aria-label="Menú principal" class="flex-grow-1">
+                        <ul class="nav nav-pills flex-column mb-sm-auto mb-0">
+                            <li class="nav-item">
+                                <a href="vistaModerador.html" class="nav-link text-white">
+                                    <i class="fa-solid fa-table-columns"></i><span class="ms-2">Dashboard</span>
+                                </a>
+                            </li>
+                            <li><a href="ordenes.html" class="nav-link text-white"><i class="fa-solid fa-box"></i><span
+                                        class="ms-2">Orders</span></a></li>
+                            <li><a href="inventario.html" class="nav-link text-white active"><i
+                                        class="fa-solid fa-warehouse"></i><span class="ms-2">Inventory</span></a></li>
+                            <li><a href="reports.html" class="nav-link text-white"><i
+                                        class="fa-solid fa-chart-bar"></i><span class="ms-2">Reports</span></a></li>
+                            <li><a href="employes.html" class="nav-link text-white"><i
+                                        class="fa-solid fa-users"></i><span class="ms-2">Employees</span></a></li>
+                            <li><a href="customers.html" class="nav-link text-white"><i
+                                        class="fa-solid fa-user-group"></i><span class="ms-2">Customers</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- Main -->
+            <main class="col py-4">
+                <div class="container">
+                    <h2 class="mb-4 fw-bold text-center">NUEVO USUARIO</h2>
+
+                    <!-- Formulario -->
+                    <form class="card p-4 shadow-sm">
+                        <h5 class="mb-3">Registro de usuario</h5>
+                        <form id="userForm" novalidate>
+                            <!-- RUN -->
+                            <div class="mb-3">
+                                <label for="run" class="form-label">RUN (sin puntos ni guion)</label>
+                                <input type="text" class="form-control" id="run" placeholder="Ej: 19011022K"
+                                    inputmode="text" autocomplete="off" minlength="7" maxlength="9" required />
+                                <div class="form-text">Solo números y K. Ejemplo: 19011022K</div>
+                            </div>
+
+                            <!-- Nombre completo -->
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre completo</label>
+                                <input type="text" id="nombre" class="form-control" required>
+                            </div>
+
+
+                            <!-- Correo -->
+                            <div class="mb-3">
+                                <label for="correo" class="form-label">Correo</label>
+                                <input type="email" id="correo" class="form-control" required>
+                            </div>
+
+                            <!-- Contraseña -->
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Contraseña</label>
+                                <input type="password" id="password" class="form-control" required>
+                            </div>
+
+                            <!-- Confirmar contraseña -->
+                            <div class="mb-3">
+                                <label for="confirmPassword" class="form-label">Confirmar contraseña</label>
+                                <input type="password" id="confirmPassword" class="form-control" required>
+                            </div>
+
+                            <!-- Teléfono -->
+                            <div class="mb-3">
+                                <label for="telefono" class="form-label">Teléfono (opcional)</label>
+                                <input type="tel" id="telefono" class="form-control">
+                            </div>
+
+                            <!-- Región, Comuna y Rol -->
+                            <div class="row mb-3">
+                                <div class="col-md-4">
+                                    <label for="region" class="form-label">Región</label>
+                                    <select id="region" class="form-select" required>
+                                        <option value="">-- Seleccione la región --</option>
+                                        <option value="rm">Región Metropolitana</option>
+                                        <option value="arica">Región de Arica</option>
+                                        <option value="nuble">Región de Ñuble</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="comuna" class="form-label">Comuna</label>
+                                    <select id="comuna" class="form-select" required>
+                                        <option value="">-- Seleccione la comuna --</option>
+                                        <option value="linares">Linares</option>
+                                        <option value="la-serena">La Serena</option>
+                                        <option value="concepcion">Concepción</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="rol" class="form-label">Rol</label>
+                                    <select id="rol" class="form-select" required>
+                                        <option value="">-- Seleccione el rol --</option>
+                                        <option value="admin">Administrador</option>
+                                        <option value="cliente">Cliente</option>
+                                        <option value="vendedor">Vendedor</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Botón -->
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary px-5">Registrar</button>
+                            </div>
+                        </form>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

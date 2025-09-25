@@ -1,3 +1,18 @@
-#mensajeError {
-  min-height: 20px;      /* asegura espacio fijo */    /* ocupa el ancho disponible */
+/* Estilos uniformes para los enlaces del sidebar */
+.nav-pills .nav-link {
+  border-radius: 0.5rem; /* bordes redondeados */
+  padding: 0.5rem 1rem; /* mismo padding en todos */
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+}
+
+.nav-pills .nav-link i {
+  min-width: 20px; /* espacio fijo para los íconos */
+  text-align: center;
+}
+
+.nav-pills .nav-link.active {
+  background-color: #0d6efd ; /* azul de Bootstrap */
+  color: #fff ;
 }
