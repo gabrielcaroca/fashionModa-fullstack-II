@@ -1,88 +1,77 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dashboard Admin</title>
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  <link rel="stylesheet" href="assets/css/styles.css">
-
-  <!-- Font Awesome (íconos) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vista Desarrollador</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="vistaDesarrollador.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
 </head>
-
 <body>
   <div class="container-fluid">
     <div class="row flex-nowrap">
+      
       <!-- Sidebar -->
-      <aside class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark text-white">
-        <div class="d-flex flex-column align-items-sm-start px-3 pt-2 min-vh-100">
+      <aside class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark text-white min-vh-100">
+        <div class="d-flex flex-column align-items-sm-start px-3 pt-2">
           <header class="mb-3">
             <a href="#" class="d-flex align-items-center text-white text-decoration-none">
-              <span class="fs-5"><i class="fa-solid fa-circle-notch me-2"></i> Company</span>
+              <span class="fs-5"><i class="bi bi-code-slash me-2"></i> Desarrollador</span>
             </a>
           </header>
-
-          <nav aria-label="Menú principal" class="flex-grow-1">
-            <ul class="nav nav-pills flex-column mb-sm-auto mb-0">
-              <li class="nav-item">
-                <a href="vistaModerador.html" class="nav-link text-white active">
-                  <i class="fa-solid fa-table-columns"></i><span class="ms-2">Dashboard</span>
-                </a>
-              </li>
-              <li><a href="ordenes.html" class="nav-link text-white"><i class="fa-solid fa-box"></i><span
-                    class="ms-2">Orders</span></a></li>
-              <li><a href="inventario.html" class="nav-link text-white"><i class="fa-solid fa-warehouse"></i><span
-                    class="ms-2">Inventory</span></a></li>
-              <li><a href="reports.html" class="nav-link text-white"><i class="fa-solid fa-chart-bar"></i><span
-                    class="ms-2">Reports</span></a></li>
-              <li><a href="employes.html" class="nav-link text-white"><i class="fa-solid fa-users"></i><span
-                    class="ms-2">Employees</span></a></li>
-              <li><a href="customers.html" class="nav-link text-white"><i class="fa-solid fa-user-group"></i><span
-                    class="ms-2">Customers</span></a></li>
-            </ul>
-          </nav>
+          <ul class="nav nav-pills flex-column mb-sm-auto mb-0">
+            <li><a href="vistaModerador.html" class="nav-link text-white active"><i class="bi bi-speedometer2"></i><span class="ms-2">Dashboard</span></a></li>
+            <li><a href="ordenes.html" class="nav-link text-white"><i class="bi bi-people"></i><span class="ms-2">orders</span></a></li>
+            <li><a href="ordenes.html" class="nav-link text-white"><i class="bi bi-bar-chart"></i><span class="ms-2">Ordenes</span></a></li>
+            <li><a href="employes.html" class="nav-link text-white"><i class="bi bi-bar-chart"></i><span class="ms-2">employees</span></a></li>
+          </ul>
         </div>
       </aside>
 
       <!-- Main -->
       <main class="col py-3">
-        <!-- Dashboard -->
-        <section id="dashboard">
-          <header class="d-flex justify-content-between align-items-center mb-4">
-            <h1 class="h3">¡Hola Administrador!</h1>
-            <button class="btn btn-outline-secondary"><i class="fa-solid fa-bell"></i></button>
-          </header>
+        <header class="d-flex justify-content-between align-items-center mb-4">
+          <h2>Panel de Control</h2>
+          <button class="btn btn-outline-secondary"><i class="bi bi-bell"></i></button>
+        </header>
 
-          <section class="mb-4">
-            <h2 class="h5">Métricas principales</h2>
-            <div class="card p-3">Aquí puedes mostrar estadísticas o gráficos.</div>
-          </section>
+        <!-- Métricas -->
+        <div class="row g-3 mb-4">
+          <div class="col-md-4">
+            <div class="card shadow-sm p-3">
+              <h5 class="text-muted">Usuarios activos</h5>
+              <h2 class="text-primary">1,254</h2>
+              <small class="text-success">+5% este mes</small>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card shadow-sm p-3">
+              <h5 class="text-muted">Ventas</h5>
+              <h2 class="text-danger">$78,320</h2>
+              <small class="text-danger">-3% este mes</small>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card shadow-sm p-3">
+              <h5 class="text-muted">Nuevos registros</h5>
+              <h2 class="text-success">312</h2>
+              <small class="text-success">+12% este mes</small>
+            </div>
+          </div>
+        </div>
 
-          <section>
-            <h2 class="h5">Reportes recientes</h2>
-            <div class="card p-3">Aquí puedes mostrar reportes o tablas.</div>
-          </section>
-        </section>
-
-
+        <!-- Gráfico -->
+        <div class="card shadow-sm p-4">
+          <h5 class="mb-3">Actividad semanal</h5>
+          <canvas id="chartUsuarios"></canvas>
+        </div>
       </main>
     </div>
   </div>
 
-
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"></script>
-
-  <!-- Tu JS -->
-  <script src="assets/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="vistaDesarrollador.js"></script>
 </body>
-
 </html>

@@ -1,0 +1,13 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f6fa;
+}
+
+.card {
+  border-radius: 10px;
+  border: none;
+}
+
+.card h2 {
+  font-weight: bold;
+}

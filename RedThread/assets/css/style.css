@@ -1,75 +1,84 @@
-/* Estilos uniformes para los enlaces del sidebar */
-.nav-pills .nav-link {
-  border-radius: 0.5rem; /* bordes redondeados */
-  padding: 0.5rem 1rem; /* mismo padding en todos */
-  font-size: 0.95rem;
+/* ===== ESTILOS GENERALES ===== */
+body {
+  font-family: Arial, sans-serif;
+  background: #212121;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0;
   display: flex;
+  justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
-.nav-pills .nav-link i {
-  min-width: 20px; /* espacio fijo para los íconos */
+/* ===== FORMULARIO CARD ===== */
+.card {
+  background: #1E1E1E;
+  border: 1px solid #D32F2F;
+  border-radius: 8px;
+  padding: 15px;              /* menos padding */
+  margin: 15px auto;
+  max-width: 320px;           /* más angosta */
+  width: 100%;
+  box-shadow: 0 0 10px rgba(211, 47, 47, 0.4);
+}
+
+/* ===== TÍTULO ===== */
+.card h2 {
   text-align: center;
+  color: #D32F2F;
+  margin-bottom: 15px;
+  font-size: 18px;           /* más pequeño */
+  font-weight: bold;
 }
 
-.nav-pills .nav-link.active {
-  background-color: #0d6efd ; /* azul de Bootstrap */
-  color: #fff ;
+/* ===== LABELS ===== */
+label {
+  margin-top: 6px;
+  margin-bottom: 3px;
+  font-weight: bold;
+  font-size: 13px;           /* más chico */
+  color: #FFFFFF;
 }
 
-/* ====== Estilos básicos y limpios (nivel 1 mes) ====== */
-:root{
-  --bg:#212121;     /* fondo principal */
-  --text:#FFFFFF;   /* texto principal */
-  --muted:#9E9E9E;  /* texto secundario */
-  --accent:#D32F2F; /* acento/botones */
-  --card:#2A2A2A;   /* tarjetas */
-  --line:#3A3A3A;   /* bordes */
+/* ===== INPUTS Y SELECTS ===== */
+input.form-control,
+select.form-select {
+  background: #212121;
+  color: #FFFFFF;
+  border: 1px solid #9E9E9E;
+  border-radius: 4px;
+  padding: 6px 8px;           /* menos alto */
+  font-size: 13px;
 }
 
-*{ box-sizing: border-box; }
-html, body{ margin:0; padding:0; font-family: system-ui, Arial, sans-serif; background:var(--bg); color:var(--text); }
-img{ max-width:100%; display:block; }
-
-/* Header/Navigation (sin div-soup) */
-header{ background: var(--card); border-bottom:1px solid var(--line); }
-header .wrap{ max-width:1040px; margin:0 auto; padding: 12px 16px; display:flex; align-items:center; justify-content:space-between; }
-nav a{ color:var(--text); text-decoration:none; padding:8px 10px; border-radius:8px; }
-nav a:hover{ background:#1d1d1d; }
-.badge{ background:var(--accent); color:#fff; font-weight:700; border-radius:20px; padding:2px 10px; margin-left:6px; }
-
-main{ max-width:1040px; padding:16px; margin:0 auto; }
-section.hero{ background:#1d1d1d; border:1px solid var(--line); padding:20px; border-radius:12px; margin: 12px 0 20px 0; }
-section.hero h1{ margin:0 0 8px 0; }
-section.hero p{ color:var(--muted); margin:0; }
-
-/* Grid y cards */
-.grid{ display:grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap:12px; }
-.card{ background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px; }
-.card h3{ margin:8px 0 6px 0; font-size:16px; }
-.card p{ margin:0; }
-.small{ color:var(--muted); font-size:14px; }
-
-/* Botones */
-.btn{ display:inline-block; border:0; padding:10px 14px; border-radius:10px; font-weight:700; cursor:pointer; }
-.btn.accent{ background:var(--accent); color:#fff; }
-.btn.ghost{ background:transparent; color:var(--text); border:1px solid var(--line); }
-.btn.block{ width:100%; text-align:center; }
-
-/* Formularios */
-form{ background:var(--card); border:1px solid var(--line); padding:16px; border-radius:12px; }
-label{ display:block; margin:10px 0 6px 0; color:var(--muted); font-size:14px; }
-input[type="text"], input[type="email"], input[type="password"], select, textarea{
-  width:100%; padding:10px; border-radius:10px; border:1px solid var(--line); background:#1b1b1b; color:var(--text);
+input::placeholder {
+  color: #9E9E9E;
+  font-size: 12px;
 }
-.row{ display:flex; gap:12px; }
-.row > *{ flex:1; }
-@media (max-width:640px){ .row{ flex-direction:column; } }
 
-/* Tabla moderador */
-table{ width:100%; border-collapse: collapse; background:var(--card); border:1px solid var(--line); border-radius:12px; overflow:hidden; }
-th, td{ text-align:left; padding:10px; border-bottom:1px solid var(--line); font-size:14px; }
-thead th{ background:#1d1d1d; }
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #D32F2F;
+  box-shadow: 0 0 4px rgba(211, 47, 47, 0.6);
+}
 
-footer{ margin-top:24px; border-top:1px solid var(--line); }
-footer .wrap{ max-width:1040px; margin:0 auto; padding:16px; color:var(--muted); }
+/* ===== BOTÓN ===== */
+button {
+  background: #D32F2F;
+  color: #FFFFFF;
+  border: none;
+  font-size: 14px;           /* más chico */
+  font-weight: bold;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+  width: 100%;
+  margin-top: 12px;
+}
+
+button:hover {
+  background: #B71C1C;
+}
+

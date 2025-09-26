@@ -2,147 +2,144 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuevo Usuario</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuevo Usuario</title>
 
-    <!-- Font Awesome (íconos) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous">
+
+  <!-- Font Awesome (íconos) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body class="bg-light">
-    <div class="container-fluid">
-        <div class="row flex-nowrap">
-            <!-- Sidebar -->
-            <aside class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark text-white">
-                <div class="d-flex flex-column align-items-sm-start px-3 pt-2 min-vh-100">
-                    <header class="mb-3">
-                        <a href="#" class="d-flex align-items-center text-white text-decoration-none">
-                            <span class="fs-5"><i class="fa-solid fa-circle-notch me-2"></i> Company</span>
-                        </a>
-                    </header>
+  <div class="container-fluid">
+    <div class="row flex-nowrap">
+      <!-- Sidebar -->
+      <aside class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark text-white">
+        <div class="d-flex flex-column align-items-sm-start px-3 pt-2 min-vh-100">
+          <header class="mb-3">
+            <a href="#" class="d-flex align-items-center text-white text-decoration-none">
+              <span class="fs-5"><i class="fa-solid fa-circle-notch me-2"></i> Company</span>
+            </a>
+          </header>
 
-                    <nav aria-label="Menú principal" class="flex-grow-1">
-                        <ul class="nav nav-pills flex-column mb-sm-auto mb-0">
-                            <li class="nav-item">
-                                <a href="vistaModerador.html" class="nav-link text-white">
-                                    <i class="fa-solid fa-table-columns"></i><span class="ms-2">Dashboard</span>
-                                </a>
-                            </li>
-                            <li><a href="ordenes.html" class="nav-link text-white"><i class="fa-solid fa-box"></i><span
-                                        class="ms-2">Orders</span></a></li>
-                            <li><a href="inventario.html" class="nav-link text-white active"><i
-                                        class="fa-solid fa-warehouse"></i><span class="ms-2">Inventory</span></a></li>
-                            <li><a href="reports.html" class="nav-link text-white"><i
-                                        class="fa-solid fa-chart-bar"></i><span class="ms-2">Reports</span></a></li>
-                            <li><a href="employes.html" class="nav-link text-white"><i
-                                        class="fa-solid fa-users"></i><span class="ms-2">Employees</span></a></li>
-                            <li><a href="customers.html" class="nav-link text-white"><i
-                                        class="fa-solid fa-user-group"></i><span class="ms-2">Customers</span></a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </aside>
-
-            <!-- Main -->
-            <main class="col py-4">
-                <div class="container">
-                    <h2 class="mb-4 fw-bold text-center">NUEVO USUARIO</h2>
-
-                    <!-- Formulario -->
-                    <form class="card p-4 shadow-sm" >
-                        <h5 class="mb-3">Registro de usuario</h5>
-                        <form id="userForm" novalidate >
-                            <!-- RUN -->
-                            <div class="mb-3">
-                                <label for="run" class="form-label">RUN (sin puntos ni guion)</label>
-                                <input type="text" class="form-control" id="run" placeholder="Ej: 19011022K"
-                                    inputmode="text" autocomplete="off" minlength="7" maxlength="9" required
-                                    pattern="^[0-9Kk]{7,9}$" />
-
-                                <div class="form-text">Solo números y K. Ejemplo: 19011022K</div>
-                            </div>
-
-                            <!-- Nombre completo -->
-                            <div class="mb-3">
-                                <label for="nombre" class="form-label">Nombre completo</label>
-                                <input type="text" id="nombre" class="form-control" required>
-                            </div>
-
-
-                            <!-- Correo -->
-                            <div class="mb-3">
-                                <label for="correo" class="form-label">Correo</label>
-                                <input type="email" id="correo" class="form-control" required
-                                    pattern="^[a-zA-Z0-9._%+-]+@(gmail\.com|duoc\.cl|profesor\.duoc\.cl)$">
-                            </div>
-
-                            <!-- Contraseña -->
-                            <div class="mb-3">
-                                <label for="pwd" class="form-label">Contraseña</label>
-                                <input type="password" id="pwd" class="form-control" required>
-                            </div>
-
-                            <!-- Confirmar contraseña -->
-                            <div class="mb-3">
-                                <label for="pwd2" class="form-label">Confirmar contraseña</label>
-                                <input type="password" id="pwd2" class="form-control" required>
-                            </div>
-
-                            <!-- Teléfono -->
-                            <div class="mb-3">
-                                <label for="telefono" class="form-label">Teléfono (opcional)</label>
-                                <input type="tel" id="telefono" class="form-control">
-                            </div>
-
-                            <!-- Región, Comuna y Rol -->
-                            <div class="row mb-3">
-                                <div class="col-md-4">
-                                    <label for="region" class="form-label">Región</label>
-                                    <select id="region" class="form-select" required>
-                                        <option value="">-- Seleccione la región --</option>
-                                        <option value="rm">Región Metropolitana</option>
-                                        <option value="arica">Región de Arica</option>
-                                        <option value="nuble">Región de Ñuble</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="comuna" class="form-label">Comuna</label>
-                                    <select id="comuna" class="form-select" required>
-                                        <option value="">-- Seleccione la comuna --</option>
-                                        <option value="linares">Linares</option>
-                                        <option value="la-serena">La Serena</option>
-                                        <option value="concepcion">Concepción</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="rol" class="form-label">Rol</label>
-                                    <select id="rol" class="form-select" required>
-                                        <option value="">-- Seleccione el rol --</option>
-                                        <option value="admin">Administrador</option>
-                                        <option value="cliente">Cliente</option>
-                                        <option value="vendedor">Vendedor</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <!-- Botón -->
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-primary px-5">Registrar</button>
-                            </div>
-                        </form>
-                    </form>
-                </div>
-            </main>
+          <nav aria-label="Menú principal" class="flex-grow-1">
+            <ul class="nav nav-pills flex-column mb-sm-auto mb-0">
+              <li class="nav-item">
+                <a href="vistaModerador.html" class="nav-link text-white">
+                  <i class="fa-solid fa-table-columns"></i><span class="ms-2">Dashboard</span>
+                </a>
+              </li>
+              <li>
+                <a href="ordenes.html" class="nav-link text-white">
+                  <i class="fa-solid fa-box"></i><span class="ms-2">Orders</span>
+                </a>
+              </li>
+              <li>
+                <a href="inventario.html" class="nav-link text-white active">
+                  <i class="fa-solid fa-warehouse"></i><span class="ms-2">Inventory</span>
+                </a>
+              </li>
+              <li>
+                <a href="employes.html" class="nav-link text-white">
+                  <i class="fa-solid fa-users"></i><span class="ms-2">Employees</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
+      </aside>
+
+      <!-- Contenido principal -->
+      <main class="col py-4">
+        <div class="container">
+          <div class="row">
+            
+            <!-- Columna izquierda: formulario -->
+            <div class="col-md-6 col-lg-5">
+              <div class="card">
+                <h2><i class="fa-solid fa-user-plus"></i> NUEVO USUARIO</h2>
+                <form id="userForm" >
+                    <div id="formMsg" class="mb-3"></div>
+
+                  <label for="run">RUN (sin puntos ni guion)</label>
+                  <input type="text" id="run" class="form-control" placeholder="Ej: 19011022K" required>
+
+                  <label for="nombre">Nombre completo</label>
+                  <input type="text" id="nombre" class="form-control" required>
+
+                  <label for="correo">Correo</label>
+                  <input type="email" id="correo" class="form-control" required>
+
+                  <label for="password">Contraseña</label>
+                  <input type="password" id="password" class="form-control" required>
+
+                  <label for="confirmar">Confirmar contraseña</label>
+                  <input type="password" id="confirmar" class="form-control" required>
+
+                  <label for="telefono">Teléfono <span class="opcional">(opcional)</span></label>
+                  <input type="text" id="telefono" class="form-control">
+
+                  <label for="region">Región</label>
+                  <select id="region" class="form-select" required>
+                    <option value="">-- Seleccione la región --</option>
+                    <option>Región Metropolitana</option>
+                    <option>Región de Arica</option>
+                    <option>Región de Ñuble</option>
+                  </select>
+
+                  <label for="comuna">Comuna</label>
+                  <select id="comuna" class="form-select" required>
+                    <option value="">-- Seleccione la comuna --</option>
+                    <option>Linares</option>
+                    <option>La Serena</option>
+                    <option>Concepción</option>
+                  </select>
+
+                  <label for="rol">Rol</label>
+                  <select id="rol" class="form-select" required>
+                    <option value="">-- Seleccione el rol --</option>
+                    <option>Administrador</option>
+                    <option>Cliente</option>
+                    <option>Vendedor</option>
+                  </select>
+
+                  <button type="submit" class="btn btn-danger mt-3 w-100">
+                    <i class="fa-solid fa-check"></i> Registrar
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <!-- Columna derecha: mensaje -->
+            <div class="col-md-6 d-flex align-items-start">
+              <div id="welcomeMsg" class="alert alert-dark fs-4 fw-bold w-100">
+                Bienvenido, al nuevo usuario
+              </div>
+              <div id="successMsg" class="alert alert-success fs-4 fw-bold w-100 d-none mt-2">
+                El usuario se ha agregado correctamente
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </main>
     </div>
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+          crossorigin="anonymous"></script>
 
+  <!-- Validaciones -->
+  <script src="assets/js/inventario.js"></script>
 </body>
-
 </html>
