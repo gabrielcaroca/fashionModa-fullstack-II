@@ -69,12 +69,15 @@ function validaRun(run) {
 }
 
 // ====== Validación de correo (dominios permitidos) ======
-const EMAIL_REGEX = /^[\w.%+-]+@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)$/i;
+const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@(gmail\.com|duoc\.cl|profesor\.duoc\.cl)$/i;
+
 
 // ====== Submit del formulario ======
-document.getElementById("userForm")?.addEventListener("submit", function (e) {
-  e.preventDefault();
-  clearMsg();
+document.getElementById("userForm");
+if (form) {
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    clearMsg();
 
   const errores = [];
 
@@ -107,9 +110,11 @@ document.getElementById("userForm")?.addEventListener("submit", function (e) {
   }
 
   // Password
-  if (!pwd) errores.push("La contraseña es requerida.");
-  if (!pwd2) errores.push("Debe confirmar la contraseña.");
-  if (pwd && pwd2 && pwd !== pwd2) errores.push("Las contraseñas no coinciden.");
+ if (!pwd || !pwd2) {
+      errores.push("Debe ingresar y confirmar la contraseña.");
+    } else if (pwd !== pwd2) {
+      errores.push("Las contraseñas no coinciden.");
+    }
 
   // Teléfono (opcional) — si lo escribe, que sea solo dígitos razonables
   if (telefono && !/^\d{7,12}$/.test(telefono)) {
@@ -136,6 +141,8 @@ document.getElementById("userForm")?.addEventListener("submit", function (e) {
     alert("Usuario registrado correctamente ✅");
   }
 
+  this.reset();
   // Aquí podrías hacer fetch/POST con los datos si corresponde…
   // this.reset();
 });
+}

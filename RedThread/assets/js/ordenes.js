@@ -18,39 +18,7 @@ if (filtroSelect) {
   });
 }
 
-// ===============================
-// 🔹 Validaciones en formulario (si existe)
-// ===============================
-const form = document.getElementById("orderForm");
-if (form) {
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
-    let valido = true;
 
-    const cliente = document.getElementById("cliente");
-    if (cliente.value.trim() === "") {
-      cliente.classList.add("is-invalid");
-      valido = false;
-    } else {
-      cliente.classList.remove("is-invalid");
-    }
-
-    const monto = document.getElementById("monto");
-    if (monto.value.trim() === "" || Number(monto.value) <= 0) {
-      monto.classList.add("is-invalid");
-      valido = false;
-    } else {
-      monto.classList.remove("is-invalid");
-    }
-
-    if (valido) {
-      alert("Orden guardada correctamente");
-      form.reset();
-      const modal = bootstrap.Modal.getInstance(document.getElementById("orderModal"));
-      modal.hide();
-    }
-  });
-}
 
 document.addEventListener("DOMContentLoaded", () => {
   const filasPorPagina = 6;

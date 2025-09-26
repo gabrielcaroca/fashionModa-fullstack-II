@@ -52,14 +52,16 @@
                     <h2 class="mb-4 fw-bold text-center">NUEVO USUARIO</h2>
 
                     <!-- Formulario -->
-                    <form class="card p-4 shadow-sm">
+                    <form class="card p-4 shadow-sm" >
                         <h5 class="mb-3">Registro de usuario</h5>
-                        <form id="userForm" novalidate>
+                        <form id="userForm" novalidate >
                             <!-- RUN -->
                             <div class="mb-3">
                                 <label for="run" class="form-label">RUN (sin puntos ni guion)</label>
                                 <input type="text" class="form-control" id="run" placeholder="Ej: 19011022K"
-                                    inputmode="text" autocomplete="off" minlength="7" maxlength="9" required />
+                                    inputmode="text" autocomplete="off" minlength="7" maxlength="9" required
+                                    pattern="^[0-9Kk]{7,9}$" />
+
                                 <div class="form-text">Solo números y K. Ejemplo: 19011022K</div>
                             </div>
 
@@ -73,19 +75,20 @@
                             <!-- Correo -->
                             <div class="mb-3">
                                 <label for="correo" class="form-label">Correo</label>
-                                <input type="email" id="correo" class="form-control" required>
+                                <input type="email" id="correo" class="form-control" required
+                                    pattern="^[a-zA-Z0-9._%+-]+@(gmail\.com|duoc\.cl|profesor\.duoc\.cl)$">
                             </div>
 
                             <!-- Contraseña -->
                             <div class="mb-3">
-                                <label for="password" class="form-label">Contraseña</label>
-                                <input type="password" id="password" class="form-control" required>
+                                <label for="pwd" class="form-label">Contraseña</label>
+                                <input type="password" id="pwd" class="form-control" required>
                             </div>
 
                             <!-- Confirmar contraseña -->
                             <div class="mb-3">
-                                <label for="confirmPassword" class="form-label">Confirmar contraseña</label>
-                                <input type="password" id="confirmPassword" class="form-control" required>
+                                <label for="pwd2" class="form-label">Confirmar contraseña</label>
+                                <input type="password" id="pwd2" class="form-control" required>
                             </div>
 
                             <!-- Teléfono -->
@@ -130,6 +133,7 @@
                                 <button type="submit" class="btn btn-primary px-5">Registrar</button>
                             </div>
                         </form>
+                    </form>
                 </div>
             </main>
         </div>
@@ -138,6 +142,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+
 </body>
 
 </html>
