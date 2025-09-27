@@ -2,146 +2,156 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nuevo Usuario</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Usuario</title>
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-        crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
-  <!-- Font Awesome (íconos) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font Awesome (íconos) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- Estilos personalizados -->
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet"
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body class="bg-light">
-  <div class="container-fluid">
-    <div class="row flex-nowrap">
-      <!-- Sidebar -->
-      <aside class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark text-white">
-        <div class="d-flex flex-column align-items-sm-start px-3 pt-2 min-vh-100">
-          <header class="mb-3">
-            <a href="#" class="d-flex align-items-center text-white text-decoration-none">
-              <span class="fs-5"><i class="bi bi-code-slash me-2"></i> Company</span>
-            </a>
-          </header>
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <!-- Sidebar -->
+            <aside class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark text-white">
+                <div class="d-flex flex-column align-items-sm-start px-3 pt-2 min-vh-100">
+                    <header class="mb-3">
+                        <a href="#" class="d-flex align-items-center text-white text-decoration-none">
+                            <span class="fs-5"><i class="bi bi-code-slash me-2"></i> Company</span>
+                        </a>
+                    </header>
 
-          <nav aria-label="Menú principal" class="flex-grow-1">
-            <ul class="nav nav-pills flex-column mb-sm-auto mb-0">
-              <li class="nav-item">
-                <a href="vistaModerador.html" class="nav-link text-white">
-                  <i class="bi bi-speedometer2"></i><span class="ms-2">Dashboard</span>
-                </a>
-              </li>
-              <li>
-                <a href="ordenes.html" class="nav-link text-white">
-                  <i class="bi bi-box"></i><span class="ms-2">Orders</span>
-                </a>
-              </li>
-              <li>
-                <a href="inventario.html" class="nav-link text-white active">
-                  <i class="bi bi-archive"></i><span class="ms-2">Inventory</span>
-                </a>
-              </li>
-              <li>
-                <a href="employes.html" class="nav-link text-white">
-                  <i class="bi bi-people"></i><span class="ms-2">Employees</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
+                    <nav aria-label="Menú principal" class="flex-grow-1">
+                        <ul class="nav nav-pills flex-column mb-sm-auto mb-0">
+                            <li class="nav-item">
+                                <a href="vistaModerador.html" class="nav-link text-white">
+                                    <i class="bi bi-speedometer2"></i><span class="ms-2">Dashboard</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="ordenes.html" class="nav-link text-white">
+                                    <i class="bi bi-box"></i><span class="ms-2">Orders</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="inventario.html" class="nav-link text-white active">
+                                    <i class="bi bi-archive"></i><span class="ms-2">Inventory</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="employes.html" class="nav-link text-white">
+                                    <i class="bi bi-people"></i><span class="ms-2">Employees</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="mt-auto w-100">
+                        <ul class="nav nav-pills flex-column">
+                            <li>
+                                <a href="index.html" class="nav-link text-white">
+                                    <i class="bi bi-box-arrow-right"></i><span class="ms-2">Salir</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Contenido principal -->
+            <main class="col py-4">
+                <div class="container">
+                    <div class="row">
+
+                        <!-- Columna izquierda: formulario -->
+                        <div class="col-md-6 col-lg-5">
+                            <div class="card">
+                                <h2><i class="fa-solid fa-user-plus"></i> NUEVO USUARIO</h2>
+                                <form id="userForm">
+                                    <div id="formMsg" class="mb-3"></div>
+
+                                    <label for="run">RUN (sin puntos ni guion)</label>
+                                    <input type="text" id="run" class="form-control" placeholder="Ej: 19011022K"
+                                        required>
+
+                                    <label for="nombre">Nombre completo</label>
+                                    <input type="text" id="nombre" class="form-control" required>
+
+                                    <label for="correo">Correo</label>
+                                    <input type="email" id="correo" class="form-control" required>
+
+                                    <label for="password">Contraseña</label>
+                                    <input type="password" id="password" class="form-control" required>
+
+                                    <label for="confirmar">Confirmar contraseña</label>
+                                    <input type="password" id="confirmar" class="form-control" required>
+
+                                    <label for="telefono">Teléfono <span class="opcional">(opcional)</span></label>
+                                    <input type="text" id="telefono" class="form-control">
+
+                                    <label for="region">Región</label>
+                                    <select id="region" class="form-select" required>
+                                        <option value="">-- Seleccione la región --</option>
+                                        <option>Región Metropolitana</option>
+                                        <option>Región de Arica</option>
+                                        <option>Región de Ñuble</option>
+                                    </select>
+
+                                    <label for="comuna">Comuna</label>
+                                    <select id="comuna" class="form-select" required>
+                                        <option value="">-- Seleccione la comuna --</option>
+                                        <option>Linares</option>
+                                        <option>La Serena</option>
+                                        <option>Concepción</option>
+                                    </select>
+
+                                    <label for="rol">Rol</label>
+                                    <select id="rol" class="form-select" required>
+                                        <option value="">-- Seleccione el rol --</option>
+                                        <option>Administrador</option>
+                                        <option>Cliente</option>
+                                        <option>Vendedor</option>
+                                    </select>
+
+                                    <button type="submit" class="btn btn-danger mt-3 w-100">
+                                        <i class="fa-solid fa-check"></i> Registrar
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Columna derecha: mensaje -->
+                        <div class="col-md-6 d-flex align-items-start">
+                            <div id="welcomeMsg" class="alert alert-dark fs-4 fw-bold w-100">
+                                Bienvenido, al nuevo usuario
+                            </div>
+                            <div id="successMsg" class="alert alert-success fs-4 fw-bold w-100 d-none mt-2">
+                                El usuario se ha agregado correctamente
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </main>
         </div>
-      </aside>
-
-      <!-- Contenido principal -->
-      <main class="col py-4">
-        <div class="container">
-          <div class="row">
-            
-            <!-- Columna izquierda: formulario -->
-            <div class="col-md-6 col-lg-5">
-              <div class="card">
-                <h2><i class="fa-solid fa-user-plus"></i> NUEVO USUARIO</h2>
-                <form id="userForm" >
-                    <div id="formMsg" class="mb-3"></div>
-
-                  <label for="run">RUN (sin puntos ni guion)</label>
-                  <input type="text" id="run" class="form-control" placeholder="Ej: 19011022K" required>
-
-                  <label for="nombre">Nombre completo</label>
-                  <input type="text" id="nombre" class="form-control" required>
-
-                  <label for="correo">Correo</label>
-                  <input type="email" id="correo" class="form-control" required>
-
-                  <label for="password">Contraseña</label>
-                  <input type="password" id="password" class="form-control" required>
-
-                  <label for="confirmar">Confirmar contraseña</label>
-                  <input type="password" id="confirmar" class="form-control" required>
-
-                  <label for="telefono">Teléfono <span class="opcional">(opcional)</span></label>
-                  <input type="text" id="telefono" class="form-control">
-
-                  <label for="region">Región</label>
-                  <select id="region" class="form-select" required>
-                    <option value="">-- Seleccione la región --</option>
-                    <option>Región Metropolitana</option>
-                    <option>Región de Arica</option>
-                    <option>Región de Ñuble</option>
-                  </select>
-
-                  <label for="comuna">Comuna</label>
-                  <select id="comuna" class="form-select" required>
-                    <option value="">-- Seleccione la comuna --</option>
-                    <option>Linares</option>
-                    <option>La Serena</option>
-                    <option>Concepción</option>
-                  </select>
-
-                  <label for="rol">Rol</label>
-                  <select id="rol" class="form-select" required>
-                    <option value="">-- Seleccione el rol --</option>
-                    <option>Administrador</option>
-                    <option>Cliente</option>
-                    <option>Vendedor</option>
-                  </select>
-
-                  <button type="submit" class="btn btn-danger mt-3 w-100">
-                    <i class="fa-solid fa-check"></i> Registrar
-                  </button>
-                </form>
-              </div>
-            </div>
-
-            <!-- Columna derecha: mensaje -->
-            <div class="col-md-6 d-flex align-items-start">
-              <div id="welcomeMsg" class="alert alert-dark fs-4 fw-bold w-100">
-                Bienvenido, al nuevo usuario
-              </div>
-              <div id="successMsg" class="alert alert-success fs-4 fw-bold w-100 d-none mt-2">
-                El usuario se ha agregado correctamente
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </main>
     </div>
-  </div>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-          crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 
-  <!-- Validaciones -->
-  <script src="assets/js/inventario.js"></script>
+    <!-- Validaciones -->
+    <script src="assets/js/inventario.js"></script>
 </body>
+
 </html>
