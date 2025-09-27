@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>RedThread — Carrito</title>
+  <link href="assets/css/base.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="site-header">
+   <div class="container header-inner">
+    <a class="brand" href="index.html">RedThread</a>
+    <div class="header-right">
+      <a class="cart" href="carrito.html"><span class="cart-icon">🛒</span><span class="cart-badge">0</span></a>
+      <a class="btn-admin" href="login.html">Login</a>
+    </div>
+   </div>
+  </header>
+
+  <main class="container">
+    <h1 class="seccion-titulo">Tu carrito</h1>
+    <table class="table">
+      <thead><tr><th>Producto</th><th>Precio</th><th>Cant.</th><th>Subtotal</th><th></th></tr></thead>
+      <tbody id="cart-body"><tr><td colspan="5">Cargando…</td></tr></tbody>
+    </table>
+    <div class="total">
+      <button id="cart-clear" class="btn-secundario">Vaciar</button>
+      <strong>Total:</strong> <span id="cart-total">$0</span>
+      <a id="cart-pay" class="btn-primario" href="#">Pagar</a>
+    </div>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Navegación inferior">
+    <div class="inner">
+      <a class="tab" href="index.html">Inicio</a>
+      <a class="tab" href="productos.html">Productos</a>
+      <a class="tab" href="nosotros.html">Nosotros</a>
+      <a class="tab" href="contacto.html">Contacto</a>
+    </div>
+  </nav>
+
+  <footer class="site-footer"><div class="container footer-inner"><p>© 2025 RedThread.</p></div></footer>
+  <script src="assets/js/app.js"></script>
+ </body>
+</html>
